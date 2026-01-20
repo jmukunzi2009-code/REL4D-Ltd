@@ -377,7 +377,7 @@
           jean: {
             title: "Jean Willy ULIHO - Managing Director",
             image:
-              "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2064&q=80",
+              "https://workforceafrica.com/wp-content/uploads/2025/02/Jean-Willy-ULIHO-Monitoring-Evaluation-and-Learing-Mgr-Agahozo-Shalom-Youth-Village.webp",
             content: `
                         <div class="modal-section">
                             <h3>Professional Background</h3>
@@ -757,3 +757,4 @@
           }
         });
       });
+
