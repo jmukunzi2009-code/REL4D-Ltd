@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>REL4D | Research and Learning for Development</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+<link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <!-- Color Picker -->
+    <div class="color-picker">
+      <div class="color-picker-toggle" id="colorPickerToggle">
+        <i class="fas fa-palette"></i>
+      </div>
+      <div class="color-picker-menu" id="colorPickerMenu">
+        <div class="color-option" onclick="applyTheme('navy')">
+          <div class="color-swatch swatch-navy"></div>
+          <span>Navy Theme</span>
+        </div>
+        <div class="color-option" onclick="applyTheme('green')">
+          <div class="color-swatch swatch-green"></div>
+          <span>Green Theme</span>
+        </div>
+        <div class="color-option" onclick="applyTheme('orange')">
+          <div class="color-swatch swatch-orange"></div>
+          <span>Orange Theme</span>
+        </div>
+        <div class="color-option" onclick="toggleDarkMode()">
+          <div class="color-swatch swatch-dark"></div>
+          <span>Dark Mode</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="detailModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 id="modalTitle">Details</h2>
+          <button class="modal-close" onclick="closeModal()">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-image" id="modalImage"></div>
+          <div id="modalContent">
+            <!-- Content will be injected here -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+      <div class="container header-container">
+        <a href="#home" class="logo">
+          <div class="logo-icon">R4D</div>
+          <div class="logo-text">
+            <h1>REL4D Ltd</h1>
+            <p>Research and Learning for Development</p>
+          </div>
+        </a>
+
+        <div class="mobile-toggle" id="mobileToggle">
+          <i class="fas fa-bars"></i>
+        </div>
+
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#mission">Mission & Vision</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="header-actions">
+          <div class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon"></i>
+          </div>
+          <a href="#contact" class="btn btn-primary">Get Started</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <video autoplay muted loop class="hero-video">
+        <source
+          src="https://assets.mixkit.co/videos/preview/mixkit-data-processing-5036-large.mp4"
+          type="video/mp4"
+        />
+      </video>
+      <div class="container">
+        <div class="hero-content animate-fade-in">
+          <div class="hero-badge">
+            <i class="fas fa-chart-line"></i>
+            Evidence Drives Change and Transformation
+          </div>
+          <h1>Research & Learning for Development Excellence</h1>
+          <p>
+            A registered consultancy firm specializing in conducting research,
+            evaluations, and supporting learning initiatives for international
+            development programs. We utilize cutting-edge data analytics,
+            machine learning, and AI capabilities to maximize evidence and
+            insights.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#services" class="btn btn-primary">
+              <i class="fas fa-rocket"></i>
+              Explore Services
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <i class="fas fa-calendar-alt"></i>
+              Request Proposal
+            </a>
+            <button class="btn btn-secondary" onclick="playIntroVideo()">
+              <i class="fas fa-play"></i>
+              Watch Intro
+            </button>
+          </div>
+        </div>
+
+        <div class="stats-bar animate-fade-in">
+          <div class="stat-item">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Projects Completed</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">15+</div>
+            <div class="stat-label">Development Sectors</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Client Satisfaction</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">5+</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">About REL4D Hub</h2>
+          <p class="section-subtitle">
+            A registered consultancy firm specializing in research, evaluations,
+            and learning initiatives for international development programs.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-image">
+            <img
+              src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+              alt="Research & Development"
+            />
+            <div class="about-image-badge">
+              <i class="fas fa-certificate"></i> Registered Consultancy
+            </div>
+          </div>
+
+          <div class="about-content">
+            <h3>Transforming Development Through Evidence-Based Approaches</h3>
+            <p>
+              REL4D Hub Ltd is a registered consultancy firm (TIN: 121718400)
+              based in Kigali, Rwanda, specializing in conducting research,
+              evaluations, and supporting learning initiatives for international
+              development programs.
+            </p>
+            <p>
+              We leverage a blend of traditional and computational methods to
+              provide customized evaluations, research, data analysis,
+              interactive visualizations, predictive modeling, and learning
+              strategies that bridge evidence with practice across the program
+              lifecycle.
+            </p>
+
+            <ul class="about-features">
+              <li>
+                <i class="fas fa-check-circle"></i> End-to-end research and
+                evaluation services
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Cutting-edge data analytics
+                and machine learning
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Monitoring, evaluation, and
+                learning (MEL) systems
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Capacity building and
+                knowledge management
+              </li>
+            </ul>
+
+            <button
+              class="btn btn-primary"
+              onclick="showAboutDetail()"
+              style="margin-top: 30px"
+            >
+              <i class="fas fa-book-open"></i>
+              Read Full Profile
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section class="mission-vision" id="mission">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Mission & Vision</h2>
+          <p class="section-subtitle">
+            Our guiding principles that drive everything we do at REL4D Hub.
+          </p>
+        </div>
+
+        <div class="mission-vision-grid">
+          <div class="mission-card" onclick="showMissionDetail()">
+            <div class="mission-image"></div>
+            <h3>Our Mission</h3>
+            <p>
+              To strengthen development outcomes through rigorous, robust,
+              evidence-based model of scientific inquiry and collaborative
+              learning partnerships.
+            </p>
+            <div
+              style="
+                margin-top: 25px;
+                color: var(--primary-color);
+                font-weight: 600;
+              "
+            >
+              <i class="fas fa-arrow-right"></i> Click to explore our mission
+            </div>
+          </div>
+
+          <div class="vision-card" onclick="showVisionDetail()">
+            <div class="vision-image"></div>
+            <h3>Our Vision</h3>
+            <p>
+              We envision evidence-informed policies, resilient communities, and
+              locally sustained development outcomes - achieved through
+              collaborative learning partnerships.
+            </p>
+            <div
+              style="
+                margin-top: 25px;
+                color: var(--secondary-color);
+                font-weight: 600;
+              "
+            >
+              <i class="fas fa-arrow-right"></i> Click to explore our vision
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Our Services</h2>
+          <p class="section-subtitle">
+            Comprehensive services to establish strong, robust and functional
+            Monitoring, Evaluation, Research, and Learning systems.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <div
+            class="service-card"
+            onclick="showServiceDetail('model-building')"
+          >
+            <div
+              class="service-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+              "
+            ></div>
+            <h3>Model Building</h3>
+            <p>
+              We support organizations to develop the Theory of Change (TOC),
+              Result Frameworks, Logic Frameworks, Key Performance Indicators,
+              and comprehensive M&E Plans.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Theory of Change Development</li>
+              <li><i class="fas fa-check"></i> Results Framework Design</li>
+              <li><i class="fas fa-check"></i> Custom Indicator Development</li>
+              <li><i class="fas fa-check"></i> M&E Plan Creation</li>
+            </ul>
+          </div>
+
+          <div
+            class="service-card"
+            onclick="showServiceDetail('system-customization')"
+          >
+            <div
+              class="service-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+              "
+            ></div>
+            <h3>System Customization</h3>
+            <p>
+              We support organizations to customize efficient and robust systems
+              for data collection, analytics, and visualization using Machine
+              Learning and Artificial Intelligence.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Data Collection Systems</li>
+              <li><i class="fas fa-check"></i> Analytics Dashboards</li>
+              <li><i class="fas fa-check"></i> AI-Powered Insights</li>
+              <li><i class="fas fa-check"></i> Real-time Reporting</li>
+            </ul>
+          </div>
+
+          <div class="service-card" onclick="showServiceDetail('research')">
+            <div
+              class="service-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+              "
+            ></div>
+            <h3>Research & Evaluation</h3>
+            <p>
+              We support organizations to apply scientific methods and proven
+              processes to conduct descriptive, predictive, and prescriptive
+              evaluations to measure program impact.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Impact Evaluations</li>
+              <li><i class="fas fa-check"></i> Market Analysis</li>
+              <li><i class="fas fa-check"></i> Learning Assessments</li>
+              <li><i class="fas fa-check"></i> Predictive Analytics</li>
+            </ul>
+          </div>
+
+          <div class="service-card" onclick="showServiceDetail('capacity')">
+            <div
+              class="service-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80');
+              "
+            ></div>
+            <h3>Capacity Building</h3>
+            <p>
+              We build the capacity of organizations to enhance sustainable and
+              reliable capabilities and culture of data-driven and
+              evidence-based decision-making.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Training Programs</li>
+              <li><i class="fas fa-check"></i> Technical Mentorship</li>
+              <li><i class="fas fa-check"></i> Knowledge Transfer</li>
+              <li><i class="fas fa-check"></i> Tool Development</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Our Experience</h2>
+          <p class="section-subtitle">
+            Proven track record working with major international organizations
+            and development programs.
+          </p>
+        </div>
+
+        <div class="experience-timeline">
+          <div class="timeline-item">
+            <span class="timeline-year">2021-2022</span>
+            <div
+              class="timeline-content"
+              onclick="showExperienceDetail('chai')"
+            >
+              <h4>Technical Advisor - Health Workforce Program</h4>
+              <p>
+                Clinton Health Access Initiative | Monitoring & Evaluation of
+                Health Workforce Program
+              </p>
+              <div class="timeline-tags">
+                <span class="timeline-tag">Health Systems</span>
+                <span class="timeline-tag">Workforce Development</span>
+                <span class="timeline-tag">M&E Systems</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-year">2020-2021</span>
+            <div
+              class="timeline-content"
+              onclick="showExperienceDetail('rihsa')"
+            >
+              <h4>MEL Manager - Integrated Health System</h4>
+              <p>
+                Palladium | USAID Rwanda Integrated Health System Activity
+                (RIHSA)
+              </p>
+              <div class="timeline-tags">
+                <span class="timeline-tag">Health Systems</span>
+                <span class="timeline-tag">Integrated Care</span>
+                <span class="timeline-tag">Systems Strengthening</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-year">2018-2020</span>
+            <div
+              class="timeline-content"
+              onclick="showExperienceDetail('isvp')"
+            >
+              <h4>MERL Manager - Vulnerable Populations</h4>
+              <p>
+                Global Communities | USAID Improved Services for Vulnerable
+                Populations (ISVP)
+              </p>
+              <div class="timeline-tags">
+                <span class="timeline-tag">Vulnerable Groups</span>
+                <span class="timeline-tag">Social Protection</span>
+                <span class="timeline-tag">Community Services</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 50px">
+          <button class="btn btn-primary" onclick="showAllExperience()">
+            <i class="fas fa-history"></i>
+            View Complete Experience Timeline
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Recent Projects</h2>
+          <p class="section-subtitle">
+            Key projects demonstrating our expertise across development sectors
+            in Rwanda.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <div class="project-card" onclick="showProjectDetail('ingobyi')">
+            <div
+              class="project-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+              "
+            >
+              <span class="project-category">Health</span>
+            </div>
+            <div class="project-content">
+              <h3>USAID Ingobyi Activity Endline Survey</h3>
+              <p>
+                Comprehensive endline assessment of health system strengthening
+                program across Rwanda's healthcare facilities.
+              </p>
+            </div>
+          </div>
+
+          <div class="project-card" onclick="showProjectDetail('igire-ubaka')">
+            <div
+              class="project-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+              "
+            >
+              <span class="project-category">Economic</span>
+            </div>
+            <div class="project-content">
+              <h3>Igire Ubaka Ejo Baseline Survey</h3>
+              <p>
+                Baseline data collection in Gasabo, Kayonza, and Rusizi
+                districts for economic empowerment program.
+              </p>
+            </div>
+          </div>
+
+          <div class="project-card" onclick="showProjectDetail('dreams')">
+            <div
+              class="project-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+              "
+            >
+              <span class="project-category">Education</span>
+            </div>
+            <div class="project-content">
+              <h3>DREAMS Baseline Survey</h3>
+              <p>
+                Technical lead for vulnerable youth program baseline assessment
+                in Nyarugenge District.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="certifications" id="certifications">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Certifications & Registrations</h2>
+          <p class="section-subtitle">
+            Official credentials and registrations that establish our legitimacy
+            and expertise.
+          </p>
+        </div>
+
+        <div class="cert-grid">
+          <div class="cert-card" onclick="showCertDetail('tin')">
+            <div class="cert-icon">
+              <i class="fas fa-id-card"></i>
+            </div>
+            <h3>Tax Identification Number</h3>
+            <p>TIN: 121718400</p>
+            <p
+              style="
+                font-size: 0.85rem;
+                margin-top: 10px;
+                color: var(--accent-color);
+              "
+            >
+              Registered Business
+            </p>
+          </div>
+
+          <div class="cert-card" onclick="showCertDetail('rwanda')">
+            <div class="cert-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <h3>Registered Location</h3>
+            <p>Kigali, Rwanda</p>
+            <p
+              style="
+                font-size: 0.85rem;
+                margin-top: 10px;
+                color: var(--accent-color);
+              "
+            >
+              Headquarters
+            </p>
+          </div>
+
+          <div class="cert-card" onclick="showCertDetail('usaid')">
+            <div class="cert-icon">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <h3>USAID Partner</h3>
+            <p>Multiple Project Experience</p>
+            <p
+              style="
+                font-size: 0.85rem;
+                margin-top: 10px;
+                color: var(--accent-color);
+              "
+            >
+              Verified Partner
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Our Leadership</h2>
+          <p class="section-subtitle">
+            Experienced professionals driving evidence-based development
+            transformation.
+          </p>
+        </div>
+
+        <div class="team-grid">
+          <div class="team-card" onclick="showTeamDetail('jean')">
+            <div class="member-photo">
+              <img
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2064&q=80"
+                alt="Jean Willy ULIHO"
+              />
+            </div>
+            <h3>Jean Willy ULIHO</h3>
+            <div class="member-role">Managing Director</div>
+            <div class="member-bio">
+              5+ years of leadership experience in international NGOs with
+              specialized expertise in USAID programming, monitoring &
+              evaluation, and research design.
+            </div>
+            <div class="member-social">
+              <a href="mailto:rel4dltd@gmail.com"
+                ><i class="fas fa-envelope"></i
+              ></a>
+              <a href="tel:+250788286965"><i class="fas fa-phone"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+
+          <div class="team-card" onclick="showTeamDetail('research')">
+            <div class="member-photo">
+              <img
+                src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80"
+                alt="Research Team"
+              />
+            </div>
+            <h3>Research Team</h3>
+            <div class="member-role">Technical Experts</div>
+            <div class="member-bio">
+              Specialized expertise designing surveys, collecting field data,
+              analyzing results, and distilling insights across multiple
+              development sectors.
+            </div>
+            <div class="member-social">
+              <a href="#"><i class="fas fa-users"></i></a>
+              <a href="#"><i class="fas fa-graduation-cap"></i></a>
+              <a href="#"><i class="fas fa-chart-bar"></i></a>
+            </div>
+          </div>
+
+          <div class="team-card" onclick="showTeamDetail('data')">
+            <div class="member-photo">
+              <img
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80"
+                alt="Data Team"
+              />
+            </div>
+            <h3>Data Analytics Team</h3>
+            <div class="member-role">Data Scientists</div>
+            <div class="member-bio">
+              Experts in machine learning, AI applications for development,
+              predictive modeling, and data visualization systems.
+            </div>
+            <div class="member-social">
+              <a href="#"><i class="fas fa-database"></i></a>
+              <a href="#"><i class="fas fa-brain"></i></a>
+              <a href="#"><i class="fab fa-python"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="section-subtitle">
+            Ready to transform your development programs with evidence-based
+            insights?
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info">
+            <div class="contact-info-grid">
+              <div
+                class="contact-card"
+                onclick="copyToClipboard('rel4dltd@gmail.com', 'Email')"
+              >
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <h3>Email Us</h3>
+                <p>rel4dltd@gmail.com</p>
+                <small
+                  style="
+                    color: var(--accent-color);
+                    margin-top: 10px;
+                    display: block;
+                  "
+                  >Click to copy</small
+                >
+              </div>
+
+              <div
+                class="contact-card"
+                onclick="copyToClipboard('+250788286965', 'Phone number')"
+              >
+                <div class="contact-icon">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <h3>Call Us</h3>
+                <p>+250 788 286 965</p>
+                <small
+                  style="
+                    color: var(--accent-color);
+                    margin-top: 10px;
+                    display: block;
+                  "
+                  >Click to copy</small
+                >
+              </div>
+
+              <div class="contact-card" onclick="openMaps()">
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3>Our Location</h3>
+                <p>Kigali, Rwanda</p>
+                <small
+                  style="
+                    color: var(--accent-color);
+                    margin-top: 10px;
+                    display: block;
+                  "
+                  >Click for directions</small
+                >
+              </div>
+
+              <div class="contact-card" onclick="showContactDetail()">
+                <div class="contact-icon">
+                  <i class="fas fa-user-tie"></i>
+                </div>
+                <h3>Managing Director</h3>
+                <p>Jean Willy ULIHO</p>
+                <small
+                  style="
+                    color: var(--accent-color);
+                    margin-top: 10px;
+                    display: block;
+                  "
+                  >Click for contact details</small
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <h3 style="margin-bottom: 30px; color: var(--text-dark)">
+              Request a Proposal
+            </h3>
+            <form id="contactForm">
+              <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="Enter your name"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Enter your email"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="organization">Organization</label>
+                <input
+                  type="text"
+                  id="organization"
+                  placeholder="Your organization"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="service">Service Interested In</label>
+                <select id="service">
+                  <option value="">Select a service</option>
+                  <option value="model-building">Model Building</option>
+                  <option value="system-customization">
+                    System Customization
+                  </option>
+                  <option value="research">Research & Evaluation</option>
+                  <option value="capacity">Capacity Building</option>
+                  <option value="multiple">Multiple Services</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Project Details *</label>
+                <textarea
+                  id="message"
+                  rows="5"
+                  placeholder="Tell us about your project or inquiry..."
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%">
+                <i class="fas fa-paper-plane"></i>
+                Send Request
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-logo">
+            <a href="#home" class="logo">
+              <div class="logo-icon">R4D</div>
+              <div class="logo-text">
+                <h1>REL4D Ltd</h1>
+                <p>Research and Learning for Development</p>
+              </div>
+            </a>
+            <p style="margin-top: 20px; color: rgba(255, 255, 255, 0.8)">
+              <i class="fas fa-quote-left" style="margin-right: 5px"></i>
+              Evidence Drives Change and Transformation
+            </p>
+            <p
+              style="
+                margin-top: 10px;
+                color: rgba(255, 255, 255, 0.6);
+                font-size: 0.9rem;
+              "
+            >
+              TIN: 121718400 | Kigali, Rwanda
+            </p>
+            <div class="social-links">
+              <a href="#" class="social-link" onclick="shareTwitter()"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" class="social-link" onclick="shareLinkedIn()"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="#" class="social-link" onclick="shareFacebook()"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="mailto:rel4dltd@gmail.com" class="social-link"
+                ><i class="fas fa-envelope"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#mission">Mission & Vision</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#projects">Projects</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links">
+            <h3>Services</h3>
+            <ul>
+              <li><a href="#services">Model Building</a></li>
+              <li><a href="#services">System Customization</a></li>
+              <li><a href="#services">Research & Evaluation</a></li>
+              <li><a href="#services">Capacity Building</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links">
+            <h3>Resources</h3>
+            <ul>
+              <li>
+                <a href="#" onclick="showResourceModal('proposal')"
+                  >Request Proposal</a
+                >
+              </li>
+              <li>
+                <a href="#" onclick="showResourceModal('casestudies')"
+                  >Case Studies</a
+                >
+              </li>
+              <li>
+                <a href="#" onclick="showResourceModal('papers')"
+                  >Research Papers</a
+                >
+              </li>
+              <li>
+                <a href="#" onclick="showResourceModal('tools')"
+                  >Evaluation Tools</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p>
+            &copy; 2023 REL4D Hub Ltd. All rights reserved. Research and
+            Learning for Development Hub.
+          </p>
+          <p style="margin-top: 10px; font-size: 0.85rem">
+            Registered Consultancy Firm | Specializing in Research, Evaluations,
+            and Learning Initiatives
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="index.js"></script>
+  </body>
+</html>
