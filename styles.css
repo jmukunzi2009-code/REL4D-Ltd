@@ -1395,12 +1395,13 @@
       @media (max-width: 413px){
             .stats-bar {
               display: grid;
-              grid-template-columns: repeat(4, 1fr);
+              grid-template-columns: 1fr 1fr;
               gap: 15px;
               margin-top: 80px;
               padding-right: 20px;
             }
       }
+
 
 
 
