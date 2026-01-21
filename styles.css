@@ -1391,3 +1391,13 @@
             text-align: center;
         }
       }
+/*Changed for better view of 400px*/
+      @media (max-width: 400px){
+            .stats-bar {
+              display: grid;
+              grid-template-columns: repeat(4, 1fr);
+              gap: 20px;
+              margin-top: 80px;
+            }
+      }
+
