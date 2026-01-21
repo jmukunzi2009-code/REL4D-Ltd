@@ -1392,6 +1392,24 @@
         }
       }
 
+      /*Changed for better view of 400px devices*/
+      @media (max-width: 413px){
+            .stats-bar {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        margin-top: 80px;
+      }
+
+      .stat-item {
+        text-align: center;
+        padding: 30px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: var(--radius-lg);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      }
 
 
 
