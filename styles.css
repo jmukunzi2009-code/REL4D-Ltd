@@ -1392,15 +1392,16 @@
         }
       }
 /*Changed for better view of 400px*/
-      @media (max-width: 400px){
+      @media (max-width: 413px){
             .stats-bar {
               display: grid;
               grid-template-columns: repeat(4, 1fr);
               gap: 15px;
               margin-top: 80px;
-              margin-left: 20px;
+              margin-left: 80px;
             }
       }
+
 
 
 
