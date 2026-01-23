@@ -478,29 +478,36 @@
           );
         }
       }
-
-      function playIntroVideo() {
-        openModal(
-          "REL4D Introduction",
-          "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-          `
-                    <div class="modal-section">
-                        <h3>Welcome to REL4D Hub</h3>
-                        <p>A registered consultancy firm specializing in research, evaluations, and learning initiatives for international development programs.</p>
-                    </div>
-                    
-                    <div style="margin: 30px 0; padding: 20px; background: var(--light-bg); border-radius: var(--radius-md); text-align: center;">
-                        <i class="fas fa-play-circle" style="font-size: 4rem; color: var(--primary-color); margin-bottom: 15px;"></i>
-                        <p>Introduction video coming soon. Contact us for a personalized presentation.</p>
-                    </div>
-                    
-                    <div class="modal-section">
-                        <h3>Quick Contact</h3>
-                        <p>For immediate assistance or to schedule a demo, contact us at rel4dltd@gmail.com or call +250 788 286 965.</p>
-                    </div>
-                `
-        );
-      }
+function playIntroVideo() {
+    openModal(
+        "REL4D Introduction",
+        "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+        `
+        <div class="modal-section">
+            <h3>Welcome to REL4D Hub</h3>
+            <p>A registered consultancy firm specializing in research, evaluations, and learning initiatives for international development programs.</p>
+        </div>
+        
+        <div style="margin: 30px 0; padding: 20px; background: var(--light-bg); border-radius: var(--radius-md); text-align: center;">
+            <div class="video-container">
+                <!-- Replace YOUR_VIDEO_URL_HERE with your actual video URL -->
+                <video controls style="width: 100%; border-radius: 8px;">
+                    <source src="YOUR_VIDEO_URL_HERE" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <p style="margin-top: 15px; font-size: 0.9rem; color: var(--text-light);">
+                Introduction to REL4D Hub - Our services and expertise
+            </p>
+        </div>
+        
+        <div class="modal-section">
+            <h3>Quick Contact</h3>
+            <p>For immediate assistance or to schedule a demo, contact us at rel4dltd@gmail.com or call +250 788 286 965.</p>
+        </div>
+        `
+    );
+}
 
       // Theme Management
       function applyTheme(theme) {
@@ -757,5 +764,6 @@
           }
         });
       });
+
 
 
