@@ -489,14 +489,12 @@ function playIntroVideo() {
         </div>
         
         <div style="margin: 30px 0; padding: 20px; background: var(--light-bg); border-radius: var(--radius-md); text-align: center;">
-            <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-                <!-- YouTube Embed Example -->
-                <iframe 
-                    src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
-                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 8px;"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-                </iframe>
+            <div class="video-container">
+                <!-- Replace YOUR_VIDEO_URL_HERE with your actual video URL -->
+                <video controls style="width: 100%; border-radius: 8px;">
+                    <source src="YOUR_VIDEO_URL_HERE" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
             <p style="margin-top: 15px; font-size: 0.9rem; color: var(--text-light);">
                 Introduction to REL4D Hub - Our services and expertise
@@ -766,6 +764,7 @@ function playIntroVideo() {
           }
         });
       });
+
 
 
 
